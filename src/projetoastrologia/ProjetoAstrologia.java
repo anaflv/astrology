@@ -17,6 +17,8 @@ public class ProjetoAstrologia {
         System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ASTROLOGIA DO GRUPO 27 ***~*~**");
 
         String signo = lerDados();
+        
+        
         System.out.println("___________________________________________");
         System.out.println("\n\nSeu signo é:\n" + signo + ".");
         
@@ -24,6 +26,8 @@ public class ProjetoAstrologia {
         System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
         
         System.out.println("\n\n\n");
+        
+        verNumerologiaNome("Ana");
         
         
 
@@ -41,10 +45,10 @@ public class ProjetoAstrologia {
         System.out.println("\nDigite o dia de seu nascimento (por exemplo, '12'):");
         int dia = entrada.nextInt();
 
-        System.out.println("\nDigite o mês de seu nascimento (por exemplo, 03):");
+        System.out.println("\nDigite o mês de seu nascimento (por exemplo, '03'):");
         int mes = entrada.nextInt();
 
-        System.out.println("\nDigite o ano de seu nascimento (por exemplo, 1993):");
+        System.out.println("\nDigite o ano de seu nascimento (por exemplo, '1993'):");
         int ano = entrada.nextInt();
 
         String signo = verSigno(dia, mes);
@@ -187,77 +191,105 @@ public class ProjetoAstrologia {
         return car;
     }
     
-    public static String deixarMaiusculo(String nome){
-        
-        nome = nome.toLowerCase();
-        return nome;
-    }
-    
-    public static int numerologiaLetra(){
+    public static int numerologiaLetra(String letra){
         
         /*Valores retirados do alfabeto hebraico Kabala
            http://30geons.blogspot.com.br/2011/01/chaldean-hebrew-kabala-numerical.html
         */
         
         int valor = 0;
-        String letra = "A";
         
-        if(letra == "A"){
+        if("A".equals(letra)){
             valor = 1;
-        } else if (letra == "B"){
+        } else if ("B".equals(letra)){
             valor = 2;
-        } else if (letra == "C"){
+        } else if ("C".equals(letra)){
             valor = 3;
-        } else if (letra == "D"){
+        } else if ("D".equals(letra)){
             valor = 4;
-        } else if (letra == "E"){
+        } else if ("E".equals(letra)){
             valor = 5;
-        } else if (letra == "F"){
+        } else if ("F".equals(letra)){
             valor = 6;
-        } else if (letra == "G"){
+        } else if ("G".equals(letra)){
             valor = 3;
-        } else if (letra == "H"){
+        } else if ("H".equals(letra)){
             valor = 5;
-        } else if (letra == "I"){
+        } else if ("I".equals(letra)){
             valor = 1;
-        } else if (letra == "J"){
+        } else if ("J".equals(letra)){
             valor = 1;
-        } else if (letra == "K"){
+        } else if ("K".equals(letra)){
             valor = 2;
-        } else if (letra == "L"){
+        } else if ("L".equals(letra)){
             valor = 3;
-        } else if (letra == "M"){
+        } else if ("M".equals(letra)){
             valor = 4;
-        } else if (letra == "N"){
+        } else if ("N".equals(letra)){
             valor = 5;
-        } else if (letra == "O"){
+        } else if ("O".equals(letra)){
             valor = 7;
-        } else if (letra == "P"){
+        } else if ("P".equals(letra)){
             valor = 8;
-        } else if (letra == "Q"){
+        } else if ("Q".equals(letra)){
             valor = 1;
-        } else if (letra == "R"){
+        } else if ("R".equals(letra)){
             valor = 2;
-        } else if (letra == "S"){
+        } else if ("S".equals(letra)){
             valor = 3;
-        } else if (letra == "T"){
+        } else if ("T".equals(letra)){
             valor = 4;
-        } else if (letra == "U"){
+        } else if ("U".equals(letra)){
             valor = 6;
-        } else if (letra == "V"){
+        } else if ("V".equals(letra)){
             valor = 6;
-        } else if (letra == "W"){
+        } else if ("W".equals(letra)){
             valor = 6;
-        } else if (letra == "X"){
+        } else if ("X".equals(letra)){
             valor = 5;
-        } else if (letra == "Y"){
+        } else if ("Y".equals(letra)){
             valor = 1;
-        } else if (letra == "Z"){
+        } else if ("Z".equals(letra)){
             valor = 7;
         }
         
         return valor;
         
+    }
+    
+    public static char[] fazerVetorComLetras(String nome){
+        
+        nome = nome.toUpperCase();
+        int nLetras = nome.length();
+        char[] letras = new char[nLetras];
+        
+        for(int i = 0; i < nLetras ; i++){
+            letras[i] = nome.charAt(i);
+        }
+        
+        return letras;
+    }
+    
+    public static void imprimirVetorLetras(char[] letras){
+        
+        for(int i = 0; i < letras.length; i++){
+            System.out.print(letras[i]);
+        }
+    }
+    
+    public static void verNumerologiaNome(String nome){
+        
+        char[] letras = fazerVetorComLetras(nome);
+        
+        System.out.println("Seu nome, de acordo com o alfabeto hebraico de numerologia:");
+        
+        for (int i = 0; i < letras.length; i++){
+            
+            String letra = letras[i] + "";
+            int valor = numerologiaLetra(letra);
+            System.out.println(letra + " - " + valor);
+            
+        }
     }
 
 }
