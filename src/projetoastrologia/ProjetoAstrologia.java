@@ -14,13 +14,16 @@ public class ProjetoAstrologia {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Seja bem vindo ao programa de astrologia do grupo 27!");
+        System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ASTROLOGIA DO GRUPO 27 ***~*~**");
 
         String signo = lerDados();
-        System.out.println("\n\nSeu signo é: " + signo + ".");
+        System.out.println("___________________________________________");
+        System.out.println("\n\nSeu signo é:\n" + signo + ".");
         
         String caracteristicas = caracteristicas(signo);
-        System.out.println("Caractersísticas do seu signo:\n" + caracteristicas);
+        System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
+        
+        System.out.println("\n\n\n");
         
         
 
@@ -90,7 +93,7 @@ public class ProjetoAstrologia {
 
             car = "Impulsividade, espontaneidade e impulsividade. \n"
                     + "Em Áries, podemos encontrar espontaneidade, uma energia que"
-                    + " é total impulso e um forte anseio por existir. Este signo "
+                    + " é total impulso e um forte anseio por existir.\nEste signo "
                     + "tem uma forte tendência a realizações instantâneas, pois vive"
                     + " sua vida no agora. ";
 
@@ -98,29 +101,29 @@ public class ProjetoAstrologia {
 
             car = "Realização, teimosia e sensualidade.\n"
                     + "Em Touro, podemos encontrar a pulsão da vida em sua intensidade máxima. "
-                    + "Voltado para a realização das ideias num plano tangível, material. "
-                    + "O ritmo pode até ser lento, mas dificilmente falha.";
+                    + "\nVoltado para a realização das ideias num plano tangível, material. "
+                    + "\nO ritmo pode até ser lento, mas dificilmente falha.";
 
         } else if (signo == "Gêmeos") {
 
             car = "Inteligência, versatilidade e comunicação.\n"
                     + "No signo de Gêmeos, podemos encontrar a manifestação viva do poder "
-                    + "da linguagem. Vive em sua própria mente, dialogando e especulando."
-                    + " Elabora raciocínios brilhantes, trazendo luz para outras pessoas.";
+                    + "da linguagem.\nVive em sua própria mente, dialogando e especulando."
+                    + "\nElabora raciocínios brilhantes, trazendo luz para outras pessoas.";
 
         } else if (signo == "Câncer") {
 
             car = "Emoção, afeição e imaginação."
                     + "Em Câncer, encontramos a ligação às origens."
-                    + " Este signo tem o poder de fazer com que a maioria "
-                    + "das pessoas se sinta à vontade na sua presença. "
-                    + "E adora mergulhar fundo no mistério dos sentimentos humanos.";
+                    + "\nEste signo tem o poder de fazer com que a maioria"
+                    + "das pessoas se sinta à vontade na sua presença.\n"
+                    + "Adora mergulhar fundo no mistério dos sentimentos humanos.";
 
         } else if (signo == "Leão") {
 
             car = "Generosidade, nobreza e criatividade." + "\n"
                     + "Em Leão, podemos encontrar a ideia de calor, de irradiação de luz."
-                    + " É um signo generoso, doador e vibrante em seu idealismo. "
+                    + "\nÉ um signo generoso, doador e vibrante em seu idealismo.\n"
                     + "Uma alma que costuma possuir uma consciência plena de si mesma "
                     + "e do papel que veio desempenhar no mundo.";
 
@@ -128,23 +131,23 @@ public class ProjetoAstrologia {
 
             car = "Pefeccionismo, inteligência e opinião." + "\n"
                     + "No signo de Virgem, podemos encontrar uma simplicidade funcional,"
-                    + " que tem por objetivo o aperfeiçoamento do mundo circundante."
-                    + " É também extremamente crítico e perfeccionista.";
+                    + " que tem por objetivo o aperfeiçoamento do mundo circundante.\n"
+                    + "É também extremamente crítico e perfeccionista.";
 
         } else if (signo == "Libra") {
 
             car = "Vaidade, gentileza e idealização." + "\n"
                     + "No signo de Libra, podemos encontrar o desenvolvimento da"
                     + " consciência através dos relacionamentos interpessoais."
-                    + "Para isso, abusa do charme da racionalidade. "
-                    + "Possui a rara capacidade de reconhecer no outro um semelhante.";
+                    + "\nPara isso, abusa do charme da racionalidade. "
+                    + "\nPossui a rara capacidade de reconhecer no outro um semelhante.";
 
         } else if (signo == "Escorpião") {
 
             car = "Intensidade, transformação e mistério." + "\n"
                     + "Em Escorpião, podemos encontrar um criador de seu próprio destino."
-                    + " É também um signo transformador. "
-                    + "E está sempre envolvido com suas emoções, que geralmente são muito"
+                    + "\nÉ também um signo transformador. "
+                    + "\nEstá sempre envolvido com suas emoções, que geralmente são muito"
                     + " intensas e profundas.";
 
         } else if (signo == "Sagitário") {
@@ -152,31 +155,31 @@ public class ProjetoAstrologia {
             car = "Originalidade, intuição e inspiração." + "\n"
                     + "No signo de Sagitário, podemos encontrar a dualidade "
                     + "entre o mundo real e o imaginário. "
-                    + "É um grande incentivador e adora motivar pessoas. "
+                    + "\nÉ um grande incentivador e adora motivar pessoas. "
                     + "Vai além da mediocridade e quase sempre ultrapassa as expectativas.";
 
         } else if (signo == "Capricórnio") {
 
             car = "Personalidade, persistência e esforço." + "\n"
                     + "No signo de Capricórnio, podemos encontrar ambições específicas "
-                    + "e metas bem definidas. Reflete uma determinação e atração por desafios."
-                    + " É uma estrela que brilha devagar, mas que, ao acender, se sustenta"
+                    + "e metas bem definidas. Reflete uma determinação e atração por desafios.\n"
+                    + "É uma estrela que brilha devagar, mas que, ao acender, se sustenta"
                     + " por um longo tempo.";
 
         } else if (signo == "Aquário") {
 
             car = "Inovação, originalidade e visão." + "\n"
-                    + "No signo de Aquário encontramos a abertura a novas ideias. "
-                    + "Abusa das teorias e sua visão vai além do habitual, "
-                    + "daí se dizer que Aquário é o signo dos inventores. "
-                    + "Tem facilidade para enxergar o que pode dar certo ou não. ";
+                    + "No signo de Aquário encontramos a abertura a novas ideias."
+                    + "\nAbusa das teorias e sua visão vai além do habitual, "
+                    + "daí se dizer que Aquário é o signo dos inventores."
+                    + "\nTem facilidade para enxergar o que pode dar certo ou não. ";
 
         } else if (signo == "Peixes") {
 
             car = "Solidariedade, sensibilidade e intuição." + "\n"
-                    + "No signo de Peixes encontramos o pensamento no coletivo. "
-                    + "O sentimento pisciano valoriza o todo em vez da parte. "
-                    + "E tem o dom de resolver as coisas por intermédio de uma certeira "
+                    + "No signo de Peixes encontramos o pensamento no coletivo."
+                    + "\nO sentimento pisciano valoriza o todo em vez da parte."
+                    + "\nE tem o dom de resolver as coisas por intermédio de uma certeira "
                     + "intuição.";
 
         }
