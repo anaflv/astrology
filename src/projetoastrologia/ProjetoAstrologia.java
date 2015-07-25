@@ -22,7 +22,7 @@ public class ProjetoAstrologia {
         System.out.println("Seja bem vindo ao programa de astrologia do grupo 27!");
         
         String signo = lerDados();
-        System.out.println("Seu signo é:" + signo);
+        System.out.println("\n\nSeu signo é:" + signo);
         
         
         
@@ -47,6 +47,7 @@ public class ProjetoAstrologia {
         System.out.println("\nDigite o ano de seu nascimento (por exemplo, 1993):");
         int ano = entrada.nextInt();
         
+        
         String signo = verSigno(dia,mes);
         
         return signo;
@@ -57,29 +58,29 @@ public class ProjetoAstrologia {
        
         String signo = "";
         if(mes == 1 && dia <= 19 || mes == 12 && dia <= 31){
-            signo = "aquário";
+            signo = "Aquário";
         } else if (mes == 1 && dia > 19 || mes == 2 && dia <= 18){
-            signo = "peixes";
+            signo = "Peixes";
         } else if (mes == 2 && dia >= 19 || mes == 3 && dia <= 20){
-            signo = "aries";
+            signo = "Aries";
         } else if (mes == 3 && dia >= 21 || mes == 4 && dia <=19){
-            signo = "touro";
+            signo = "Touro";
         } else if (mes == 4 && dia >= 20 || mes == 5 && dia <= 20){
-            signo = "gêmeos";
+            signo = "Gêmeos";
         } else if (mes == 5 && dia >= 21 || mes == 6 && dia <= 20){
-            signo = "câncer";
+            signo = "Câncer";
         } else if (mes == 6 && dia >= 21 || mes == 7 && dia <= 22){
-            signo = "leão";
+            signo = "Leão";
         } else if (mes == 7 && dia >= 23 || mes == 8 && dia <= 22){
-            signo = "virgem";
+            signo = "Virgem";
         } else if (mes == 8 && dia >= 23 || mes == 9 && dia <= 22){
-            signo = "libra";
+            signo = "Libra";
         } else if (mes == 9 && dia >= 23 || mes == 10 && dia <= 22){
-            signo = "escorpião";
+            signo = "Escorpião";
         } else if (mes == 10 && dia >= 23 || mes == 11 && dia <= 21){
-            signo = "sagitário";
+            signo = "Sagitário";
         } else if (mes == 11 && dia >= 22 || mes == 12 && dia <= 21){
-            signo = "capricórnio";
+            signo = "Capricórnio";
         }
         
         return signo;
