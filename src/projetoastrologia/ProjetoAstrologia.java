@@ -294,6 +294,9 @@ public class ProjetoAstrologia {
     public static void verNumerologiaNome(String nome){
         
         char[] letras = fazerVetorComLetras(nome);
+        int letrasN = letras.length;
+        int[] numeros = new int[letrasN];
+        
         
         System.out.println("Seu nome, de acordo com o alfabeto hebraico de numerologia:");
         
@@ -301,9 +304,23 @@ public class ProjetoAstrologia {
             
             String letra = letras[i] + "";
             int valor = numerologiaLetra(letra);
+            numeros[i] = valor;
             System.out.println(letra + " - " + valor);
             
         }
+        
+        somaNumeros(numeros);
+    }
+    
+    public static void somaNumeros(int[] numeros){
+        
+        int soma = 0;
+        for(int i = 0; i < numeros.length; i++){
+            soma += numeros[i];
+        }
+        System.out.println(soma);
+        
+        
     }
 
 }
