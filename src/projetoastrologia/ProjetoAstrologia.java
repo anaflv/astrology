@@ -11,12 +11,16 @@ public class ProjetoAstrologia {
     /**
      * Projeto de astrologia, desenvolvido para PI-EAD 2015 UFABC
      */
+    
+    
+    
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
         System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ASTROLOGIA DO GRUPO 27 ***~*~**");
 
-        String signo = lerDados();
+        String nome = lerNome();
+        String signo = lerNascimento();
         
         
         System.out.println("___________________________________________");
@@ -25,23 +29,33 @@ public class ProjetoAstrologia {
         String caracteristicas = caracteristicas(signo);
         System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
         
-        System.out.println("\n\n\n");
+        System.out.println("\n");
         
-        verNumerologiaNome("Ana");
+        verNumerologiaNome(nome);
         
         
 
     }
 
-    public static String lerDados() {
-
+    
+    
+    public static String lerNome(){
+        
         Scanner entrada = new Scanner(System.in);
 
         String nome = "";
 
         System.out.println("\nDigite seu nome, por favor:");
         nome = entrada.nextLine();
+        
+        return nome;
+        
+    }
+    
+    public static String lerNascimento() {
 
+        Scanner entrada = new Scanner(System.in);
+        
         System.out.println("\nDigite o dia de seu nascimento (por exemplo, '12'):");
         int dia = entrada.nextInt();
 
