@@ -186,5 +186,78 @@ public class ProjetoAstrologia {
         
         return car;
     }
+    
+    public static String deixarMaiusculo(String nome){
+        
+        nome = nome.toLowerCase();
+        return nome;
+    }
+    
+    public static int numerologiaLetra(){
+        
+        /*Valores retirados do alfabeto hebraico Kabala
+           http://30geons.blogspot.com.br/2011/01/chaldean-hebrew-kabala-numerical.html
+        */
+        
+        int valor = 0;
+        String letra = "A";
+        
+        if(letra == "A"){
+            valor = 1;
+        } else if (letra == "B"){
+            valor = 2;
+        } else if (letra == "C"){
+            valor = 3;
+        } else if (letra == "D"){
+            valor = 4;
+        } else if (letra == "E"){
+            valor = 5;
+        } else if (letra == "F"){
+            valor = 6;
+        } else if (letra == "G"){
+            valor = 3;
+        } else if (letra == "H"){
+            valor = 5;
+        } else if (letra == "I"){
+            valor = 1;
+        } else if (letra == "J"){
+            valor = 1;
+        } else if (letra == "K"){
+            valor = 2;
+        } else if (letra == "L"){
+            valor = 3;
+        } else if (letra == "M"){
+            valor = 4;
+        } else if (letra == "N"){
+            valor = 5;
+        } else if (letra == "O"){
+            valor = 7;
+        } else if (letra == "P"){
+            valor = 8;
+        } else if (letra == "Q"){
+            valor = 1;
+        } else if (letra == "R"){
+            valor = 2;
+        } else if (letra == "S"){
+            valor = 3;
+        } else if (letra == "T"){
+            valor = 4;
+        } else if (letra == "U"){
+            valor = 6;
+        } else if (letra == "V"){
+            valor = 6;
+        } else if (letra == "W"){
+            valor = 6;
+        } else if (letra == "X"){
+            valor = 5;
+        } else if (letra == "Y"){
+            valor = 1;
+        } else if (letra == "Z"){
+            valor = 7;
+        }
+        
+        return valor;
+        
+    }
 
 }
