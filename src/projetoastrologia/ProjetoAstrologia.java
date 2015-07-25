@@ -11,51 +11,44 @@ public class ProjetoAstrologia {
     /**
      * Projeto de astrologia, desenvolvido para PI-EAD 2015 UFABC
      */
-    
-    
-    
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ASTROLOGIA DO GRUPO 27 ***~*~**");
+        System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ESOTÉRICO DE HORÓSCOPO E NUMEROLOGIA"
+                + " DO GRUPO 27 ***~*~**");
 
         String nome = lerNome();
         String signo = lerNascimento();
-        
-        
+
         System.out.println("___________________________________________");
         System.out.println("\n\nSeu signo é:\n" + signo + ".");
-        
+
         String caracteristicas = caracteristicas(signo);
         System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
-        
+
         System.out.println("\n");
-        
+
         verNumerologiaNome(nome);
-        
-        
 
     }
 
-    
-    
-    public static String lerNome(){
-        
+    public static String lerNome() {
+
         Scanner entrada = new Scanner(System.in);
 
         String nome = "";
 
         System.out.println("\nDigite seu nome, por favor:");
         nome = entrada.nextLine();
-        
+
         return nome;
-        
+
     }
-    
+
     public static String lerNascimento() {
 
         Scanner entrada = new Scanner(System.in);
-        
+
         System.out.println("\nDigite o dia de seu nascimento (por exemplo, '12'):");
         int dia = entrada.nextInt();
 
@@ -201,126 +194,147 @@ public class ProjetoAstrologia {
                     + "intuição.";
 
         }
-        
+
         return car;
     }
-    
-    public static int numerologiaLetra(String letra){
-        
+
+    public static int numerologiaLetra(String letra) {
+
         /*Valores retirados do alfabeto hebraico Kabala
-           http://30geons.blogspot.com.br/2011/01/chaldean-hebrew-kabala-numerical.html
-        */
-        
+         http://30geons.blogspot.com.br/2011/01/chaldean-hebrew-kabala-numerical.html
+         */
         int valor = 0;
-        
-        if("A".equals(letra)){
+
+        if ("A".equals(letra)) {
             valor = 1;
-        } else if ("B".equals(letra)){
+        } else if ("B".equals(letra)) {
             valor = 2;
-        } else if ("C".equals(letra)){
+        } else if ("C".equals(letra)) {
             valor = 3;
-        } else if ("D".equals(letra)){
+        } else if ("D".equals(letra)) {
             valor = 4;
-        } else if ("E".equals(letra)){
+        } else if ("E".equals(letra)) {
             valor = 5;
-        } else if ("F".equals(letra)){
+        } else if ("F".equals(letra)) {
             valor = 6;
-        } else if ("G".equals(letra)){
+        } else if ("G".equals(letra)) {
             valor = 3;
-        } else if ("H".equals(letra)){
+        } else if ("H".equals(letra)) {
             valor = 5;
-        } else if ("I".equals(letra)){
+        } else if ("I".equals(letra)) {
             valor = 1;
-        } else if ("J".equals(letra)){
+        } else if ("J".equals(letra)) {
             valor = 1;
-        } else if ("K".equals(letra)){
+        } else if ("K".equals(letra)) {
             valor = 2;
-        } else if ("L".equals(letra)){
+        } else if ("L".equals(letra)) {
             valor = 3;
-        } else if ("M".equals(letra)){
+        } else if ("M".equals(letra)) {
             valor = 4;
-        } else if ("N".equals(letra)){
+        } else if ("N".equals(letra)) {
             valor = 5;
-        } else if ("O".equals(letra)){
+        } else if ("O".equals(letra)) {
             valor = 7;
-        } else if ("P".equals(letra)){
+        } else if ("P".equals(letra)) {
             valor = 8;
-        } else if ("Q".equals(letra)){
+        } else if ("Q".equals(letra)) {
             valor = 1;
-        } else if ("R".equals(letra)){
+        } else if ("R".equals(letra)) {
             valor = 2;
-        } else if ("S".equals(letra)){
+        } else if ("S".equals(letra)) {
             valor = 3;
-        } else if ("T".equals(letra)){
+        } else if ("T".equals(letra)) {
             valor = 4;
-        } else if ("U".equals(letra)){
+        } else if ("U".equals(letra)) {
             valor = 6;
-        } else if ("V".equals(letra)){
+        } else if ("V".equals(letra)) {
             valor = 6;
-        } else if ("W".equals(letra)){
+        } else if ("W".equals(letra)) {
             valor = 6;
-        } else if ("X".equals(letra)){
+        } else if ("X".equals(letra)) {
             valor = 5;
-        } else if ("Y".equals(letra)){
+        } else if ("Y".equals(letra)) {
             valor = 1;
-        } else if ("Z".equals(letra)){
+        } else if ("Z".equals(letra)) {
             valor = 7;
         }
-        
+
         return valor;
-        
+
     }
-    
-    public static char[] fazerVetorComLetras(String nome){
-        
+
+    public static char[] fazerVetorComLetras(String nome) {
+
         nome = nome.toUpperCase();
         int nLetras = nome.length();
         char[] letras = new char[nLetras];
-        
-        for(int i = 0; i < nLetras ; i++){
+
+        for (int i = 0; i < nLetras; i++) {
             letras[i] = nome.charAt(i);
         }
-        
+
         return letras;
     }
-    
-    public static void imprimirVetorLetras(char[] letras){
-        
-        for(int i = 0; i < letras.length; i++){
+
+    public static void imprimirVetorLetras(char[] letras) {
+
+        for (int i = 0; i < letras.length; i++) {
             System.out.print(letras[i]);
         }
     }
-    
-    public static void verNumerologiaNome(String nome){
-        
+
+    public static void verNumerologiaNome(String nome) {
+
         char[] letras = fazerVetorComLetras(nome);
         int letrasN = letras.length;
         int[] numeros = new int[letrasN];
         
-        
-        System.out.println("Seu nome, de acordo com o alfabeto hebraico de numerologia:");
-        
-        for (int i = 0; i < letras.length; i++){
-            
+        System.out.println("***~*~** NUMEROLOGIA ***~*~**\n");
+        System.out.println("Seu nome, de acordo com o alfabeto hebraico de numerologia:\n");
+
+        for (int i = 0; i < letras.length; i++) {
+
             String letra = letras[i] + "";
             int valor = numerologiaLetra(letra);
             numeros[i] = valor;
             System.out.println(letra + " - " + valor);
-            
+
         }
-        
+
         somaNumeros(numeros);
     }
-    
-    public static void somaNumeros(int[] numeros){
+
+    public static void somaNumeros(int[] numeros) {
+
+        
+        System.out.println("\nNÚMERO CORRESPONDENTE\n");
         
         int soma = 0;
-        for(int i = 0; i < numeros.length; i++){
+        for (int i = 0; i < numeros.length; i++) {
             soma += numeros[i];
         }
-        System.out.println(soma);
         
+        System.out.println("Para achar o número correspondente, soma-se os digitos até encontrar"
+                + " a última soma menor do que 10.");
+        System.out.println("\nA soma dos números do nome é: " + soma);
+
+        int digito1;
+        int digito2;
+        int soma1 = soma;
         
+        if (soma % 10 != 0) {
+            while (soma > 9) {
+                soma1 = soma;
+                digito1 = soma / 10;
+                digito2 = soma % 10;
+                soma = digito1 + digito2;
+                System.out.println(digito1 + " + "+ digito2 + " = " + soma);
+            }
+            System.out.println(soma + " < 10");
+
+        }
+        
+        System.out.println("O número correspondente é "+ soma1 + ".");
     }
 
 }
