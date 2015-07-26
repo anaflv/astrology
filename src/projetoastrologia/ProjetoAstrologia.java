@@ -286,9 +286,13 @@ public class ProjetoAstrologia {
     public static void verNumerologiaNome(String nome) {
 
         System.out.println("***~*~** NUMEROLOGIA ***~*~**\n");
+        
+        System.out.println("Para achar o número correspondente, soma-se os digitos até encontrar"
+            + " a ÚLTIMA soma menor do que 10.");
 
         //separar os diferentes nomes
         String nomes[] = separarNomes(nome);
+        int corr[] = new int[nomes.length];
 
         for (int j = 0; j < nomes.length; j++) {
             nome = nomes[j];
@@ -300,7 +304,7 @@ public class ProjetoAstrologia {
             int[] numeros = new int[letrasN];
             //fazer um vetor com os diferentes números correspondentes a cada letra
             
-            System.out.println("O nome, de acordo com o alfabeto hebraico de numerologia:\n");
+            System.out.println("\nO nome, de acordo com o alfabeto hebraico de numerologia:");
 
             for (int i = 0; i < letras.length; i++) {
 
@@ -311,23 +315,23 @@ public class ProjetoAstrologia {
 
             }
 
-            somaNumeros(numeros);
+            corr[j] = somaNumeros(numeros);
         }
+        
+        somaDosCorrespondentes(corr);
 
     }
 
-    public static void somaNumeros(int[] numeros) {
+    public static int somaNumeros(int[] numeros) {
 
-        System.out.println("\nNÚMERO CORRESPONDENTE\n");
+        System.out.println("\nNÚMERO CORRESPONDENTE");
 
         int soma = 0;
         for (int i = 0; i < numeros.length; i++) {
             soma += numeros[i];
         }
 
-        System.out.println("Para achar o número correspondente, soma-se os digitos até encontrar"
-                + " a última soma menor do que 10.");
-        System.out.println("\nA soma dos números do nome é: " + soma);
+        System.out.println("A soma dos números do nome é: " + soma);
 
         int digito1;
         int digito2;
@@ -346,6 +350,8 @@ public class ProjetoAstrologia {
         }
 
         System.out.println("O número correspondente é " + soma1 + ".");
+        return soma1;
+        
     }
 
     public static String[] separarNomes(String nome) {
@@ -353,5 +359,43 @@ public class ProjetoAstrologia {
         String nomes[] = nome.split(" ");
         return nomes;
     }
+    
+    public static void somaDosCorrespondentes(int[] corr){
+        
+        System.out.println("\n\nSOMA DOS NÚMEROS CORRESPONDENTES\n");
+        
+        int soma = 0;
+        for(int i =0 ; i < corr.length; i++){
+            System.out.print(corr[i]);
+            if(i + 1 < corr.length){
+                System.out.print(" + ");
+            }
+            soma += corr[i];
+        }
+        
+        System.out.print(" = " + soma + "\n");
+        
+        int digito1;
+        int digito2;
+        int soma1 = soma;
+
+        if (soma % 10 != 0) {
+            while (soma > 9) {
+                soma1 = soma;
+                digito1 = soma / 10;
+                digito2 = soma % 10;
+                soma = digito1 + digito2;
+                System.out.println(digito1 + " + " + digito2 + " = " + soma);
+            }
+            System.out.println(soma + " < 10");
+
+        }
+        System.out.println("\n*** O número correspondente ao seu nome inteiro é: " + soma1 + " ***");
+        
+        
+        
+    }
+    
+        
 
 }
