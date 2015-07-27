@@ -11,6 +11,8 @@ public class ProjetoAstrologia {
     /**
      * Projeto de astrologia, desenvolvido para PI-EAD 2015 UFABC
      */
+    
+    
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
@@ -18,13 +20,11 @@ public class ProjetoAstrologia {
                 + " DO GRUPO 27 ***~*~**");
 
         String nome = lerNome();
-        String signo = lerNascimento();
+        //String signo = lerNascimento();
 
         System.out.println("___________________________________________");
-        System.out.println("\n\nSeu signo é:\n" + signo + ".");
-
-        String caracteristicas = caracteristicas(signo);
-        System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
+        //String caracteristicas = caracteristicas(signo);
+        //System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
 
         System.out.println("\n");
 
@@ -38,7 +38,7 @@ public class ProjetoAstrologia {
 
         String nome = "";
 
-        System.out.println("\nDigite seu nome, por favor:");
+        System.out.println("\nDigite seu nome inteiro, sem acentos, por favor:");
         nome = entrada.nextLine();
 
         return nome;
@@ -278,11 +278,6 @@ public class ProjetoAstrologia {
 
     public static void verNumerologiaNome(String nome) {
 
-        System.out.println("***~*~** NUMEROLOGIA ***~*~**\n");
-
-        System.out.println("Para achar o número correspondente, soma-se os digitos até encontrar"
-                + " a ÚLTIMA soma menor do que 10.");
-
         //separar os diferentes nomes
         String nomes[] = separarNomes(nome);
         int corr[] = new int[nomes.length];
@@ -367,43 +362,117 @@ public class ProjetoAstrologia {
         int digito1;
         int digito2;
 
-        if(soma != 22 && soma != 44){
-            while (soma > 9) {
+        while (soma > 9) {
             digito1 = soma / 10;
             digito2 = soma % 10;
             soma = digito1 + digito2;
             System.out.println(digito1 + " + " + digito2 + " = " + soma);
-            }
         }
 
-        System.out.println("\n*** O número correspondente ao seu nome inteiro é: " + soma + " ***");
+        System.out.println("\n*** O número correspondente ao seu nome inteiro é: " + soma + " ***\n");
+        verSignificadoNumero(soma);
+        
 
     }
 
     public static void verSignificadoNumero(int num) {
         if (num == 1) {
+            System.out.println("O número 1 representa criatividade, proteção e benevolência. "
+                    + "1 é o número da ação original, a base de todos os outros números.\n"
+                    + "Pessoas de número 1 possuem um senso forte de auto-valor, e normalmente "
+                    + "não gostam de críticas. Uma pessoa 1 demanda - e normalmente consegue - "
+                    + "respeito; vão insistir em organizar e controlar todos e todas a sua volta.\n"
+                    + "Possuem o desejo de ser inventivos, creativos e fortemente originais.");
 
         } else if (num == 2) {
 
+            System.out.println("O número 2 representa imaginação, paternidade e sensibilidade.\n"
+                    + "2 é o número da decepção, do nascimento e de sonhos.\n"
+                    + "Pessoas 2 são sonhadoras, com uma tendência de ter medo do"
+                    + " desconhecido ou do pouco familiar.\n"
+                    + "São muito imaginativos e inventivos, mas não forçam as ourtas pessoas a concordar "
+                    + "com suas ideias ou seus planos.");
+
         } else if (num == 3) {
+
+            System.out.println("Número 3 representa idealismo, educação superior, viagens a "
+                    + "outros países e religião.\n3 é o número de otimismo, movimento e expansão "
+                    + "- e a Santíssima Trindidade de corpo, alma e espírito.\nPessoas 3 baseam todas"
+                    + " suas ações em algum grande ideal que possuem.\nEles miram para o alto e para a"
+                    + " verdade -- não são satisfeitos com nada além da verdade, seja em um relacionam"
+                    + "ento, em uma amizade, na carreira, na política ou na religão. \n"
+                    + "Eles não são abrem mão do que querem, e conseguem perceber mentiras de "
+                    + "longe. Alguns deles alcançam seu objetivo da verdade, e outros são levados"
+                    + " a acreditar em suas próprias ilusões, mas eles nunca param sua busca.");
 
         } else if (num == 4) {
 
+            System.out.println("O número 4 vibra para o planeta Urano."
+                    + "\nRepresenta individualismo, originalidade, inventividade e tolerância.\n"
+                    + "4 é o número do compartamento não convencional e de eventos inesperados "
+                    + "e repentinos.\n"
+                    + "Pessoas do número 4 são raramente compreendidos por seus amigos e familiares."
+                    + "\nSão um enigma para todos que conhecem. Fazem suas próprias regras, e elas nem sempre combinam com aquelas da sociedade.\n"
+                    + "Todos seus pensamentos e ações são coloridas por invididualidade.\n"
+                    + "Se tem um jeito diferente de fazer alguma coisa, a pessoa número 4 vai descobri-lo.\n"
+                    + "Suas palavras frequentemente chocam as outras, e pode parecer que elas fazem isso de propósito. E fazem.");
+
         } else if (num == 5) {
+
+            System.out.println("O número 5 vibra para o planeta Mercúrio.\n"
+                    + "Representa comunicação, movimento e versatilidade.\n"
+                    + "5 é o número do intelecto e da expressão oral e escrita.\n"
+                    + "Pessoas número 5 possuem um charme natural são gentis.\n"
+                    + "São rápidos para perceber coisas erradas, e não hesitam em apontá-los.\n"
+                    + "São incapazes de ignorar erros (seus próprios e das outras pessoas), e isso é associado a um amor por movimento e viagem.\n"
+                    + "Mudanças são uma necessidade interminável para pessoas 5.\n"
+                    + "Mudanças de cenário, de relacionamentos, de residência, de crenças políticas, etc.\n"
+                    + "Pessoas 5 têm dificuldade de agor de forma intuitiva; são determinados a encontrar respostas lógicas.");
 
         } else if (num == 6) {
 
+            System.out.println("O número 6 vibra para o planeta Vênus. Representa a essência feminina, compaixão, e também dinheiro."
+                    + "6 é o número do amor e do romance.\n"
+                    + "Pessoas 6 parecem atrair magneticamente as outras a elas.\n"
+                    + "São genuinamente amados por seus amigos e associados -- e quando amam as outras pessoas, se tornam devotados a seus amados.\n"
+                    + "Há mais idealismo e afeição do que sensualidade no amor que expressam.\n"
+                    + "Essas pessoas já nascem românticas e sentimentais, independentemente do quanto tentam esconder ou negar isso.\n"
+                    + "Possuem um amor por arte e uma afinidade grande por música.");
+
         } else if (num == 7) {
+
+            System.out.println("O número 7 vibra para o planeta Netuno.\n"
+                    + "Representa espiritualidade, simpatia e mistério.\n"
+                    + "7 é o número da elusão e da delusão - e às vezes da mentira - mas também o número da cura, dos milagres e da fé, e de sonhos que se realizam.\n"
+                    + "Pessoas 7 tendem a ter sonhos impressionantes.\n"
+                    + "Às vezes falam sobre eles, e às vezes não comentam sobre eles com ninguém.\n"
+                    + "Mas eles são os mais sonhadores. \n"
+                    + "Em segredo, são interessados em mistérios esotéricos, em extraterrestres, e no desconhecido.\n"
+                    + "Às vezes possuem o dom da intuição e de um magnetismo que acalma os outros.\n"
+                    + "Muitas vezes, conseguem acalmar as pessoas apenas a presença deles.");
 
         } else if (num == 8) {
 
+            System.out.println("O número 8 vibra para o planeta Saturno. \n"
+                    + "Representa conhecimento, aprendizado através da experiência, estabilidade, paciência e responsabilidade.\n"
+                    + "8 é também o número da estabilidade financeira, da precaução, da restrição, da auto-disciplina e do auto-controle.\n"
+                    + "Pessoas 8 são normalmente reservadas, quietas e tímidas. \n"
+                    + "Não necessariamente se destacam, mas devagar chegam onde querem, e nada vai impedi-las a alcançar suas ambições.\n"
+                    + "A timidez é uma forma de encobrir a energia que possuem para chegar ao todo de suas profissões ou carreiras.");
+
         } else if (num == 9) {
 
-        } else if (num == 22) {
+            System.out.println("O número 9 vibra para o planeta Marte.\n"
+                    + "Representa ação agressiva, coragem e conflito.\n"
+                    + "9 é o número da originalidade e da intuição, e da iniciativa ....\n"
+                    + "também dos aspectos contraditórios da vulnerabilidade e da ingenuidade.\n"
+                    + "Pessoas 9 não são teimosas, mas são determinadas a obter o que querem.\n"
+                    + "Têm uma tendência a serem impulsivas e a fazerem decisões precipitadas, que depois arrependem.\n"
+                    + "Apesar de às vezes ficarem irritados com as pessoas, são rápidos a perdoar e a esquecer de brigas.\n"
+                    + "São vulneráveis a seus inimigos porque o primeiro instinto deles é confiar em todos.\n"
+                    + "Pessoas manipulativas podem chocar pessoas 9.");
 
-        } else if (num >= 44) { 
-
-        }
+        } 
     }
 
 }
