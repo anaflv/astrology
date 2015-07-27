@@ -11,46 +11,40 @@ public class ProjetoAstrologia {
     /**
      * Projeto de astrologia, desenvolvido para PI-EAD 2015 UFABC
      */
-    
-    
+
+
     public static void main(String[] args) {
+
+
 
         Scanner entrada = new Scanner(System.in);
         System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ESOTÉRICO DE ASTROLOGIA E NUMEROLOGIA"
                 + " DO GRUPO 27 ***~*~**");
 
-        String nome = lerNome();
+        String nome;
+        System.out.println("\nDigite seu nome inteiro, sem acentos, por favor:");
+        nome = entrada.nextLine();
+        
+        
+        
         System.out.println("___________________________________________");
         verNumerologiaNome(nome);
-        
+
         System.out.println("\n___________________________________________");
-        
+
         System.out.print("*~**~* ASTROLOGIA ~~***~\nPara saber informações de horóscopo, digite 1:\n\n");
         if(entrada.nextInt()== 1 ){
-                
+
             String signo = lerNascimento();
             String caracteristicas = caracteristicas(signo);
             System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
         }
-        
-       
-        
-        
+
+
+
 
     }
 
-    public static String lerNome() {
-
-        Scanner entrada = new Scanner(System.in);
-
-        String nome = "";
-
-        System.out.println("\nDigite seu nome inteiro, sem acentos, por favor:");
-        nome = entrada.nextLine();
-
-        return nome;
-
-    }
 
     public static String lerNascimento() {
 
@@ -61,9 +55,6 @@ public class ProjetoAstrologia {
 
         System.out.println("\nDigite o mês de seu nascimento (por exemplo, '03'):");
         int mes = entrada.nextInt();
-
-        System.out.println("\nDigite o ano de seu nascimento (por exemplo, '1993'):");
-        int ano = entrada.nextInt();
 
         String signo = verSigno(dia, mes);
 
@@ -286,7 +277,7 @@ public class ProjetoAstrologia {
     public static void verNumerologiaNome(String nome) {
 
         System.out.println("*~**~** NUMEROLOGIA DO SEU NOME **~*~***");
-        
+
         //separar os diferentes nomes
         String nomes[] = separarNomes(nome);
         int corr[] = new int[nomes.length];
@@ -378,7 +369,7 @@ public class ProjetoAstrologia {
 
         System.out.println("\n*** O número correspondente ao seu nome inteiro é: " + soma + " ***\n");
         verSignificadoNumero(soma);
-        
+
 
     }
 
@@ -479,11 +470,62 @@ public class ProjetoAstrologia {
                     + "São vulneráveis a seus inimigos porque o primeiro instinto deles é confiar em todos.\n"
                     + "Pessoas manipulativas podem chocar pessoas 9.");
 
-        } 
+        }
     }
-    
-    
-    
-    
+
+
+    public static String combinacaoNumerologia(int p1, int p2){
+
+        String num[][] = new String[9][9];
+
+        String r1 = "De acordo com numerologia, vocês têm uma combinação ótima!"+
+                "Vocês se encaixam naturalmente";
+        String r2 = "De acordo com numerologia, seus números normalmente são compatíveis e vocês se dão bem!";
+        String r3 = "De acordo com numerologia, pode ser que vocês se deem bem e pode ser que não. Tudo depende de suas ações!";
+        String r4 = "De acordo com numerologia, a combinação de seus números é um desafio e requer esforço e compromisso.";
+
+        //A combinação entre os valores de todos os números e o significado deles
+
+
+        num[1][1] = num[1][5] = num[1][7] = r1;
+        num[2][2] = num[2][4] = num[2][8] = r1;
+        num[3][3] = num[3][6] = num[3][9] = r1;
+        num[4][2] = num[4][2] = num[4][8] = r1;
+        num[5][1] = num[5][5] = num[5][7] = r1;
+        num[6][3] = num[6][6] = num[6][9] = r1;
+        num[7][1] = num[7][5] = num[7][7] = r1;
+        num[8][4] = num[8][4] = num[8][8] = r1;
+        num[9][3] = num[9][6] = num[9][9] = r1;
+
+        num[1][3] = num[1][9] = r2;
+        num[2][3] = num[2][6] = r2;
+        num[3][1] = num[3][2] = num[3][5] = r2;
+        num[4][6] = num[4][7] = r2;
+        num[5][3] = num[5][9] = r2;
+        num[6][2] = num[6][4] = num[6][8] = r2;
+        num[7][4] = r2;
+        num[8][6] = r2;
+        num[9][1] = num[1][5] = r2;
+
+        num[1][8] = num[2][9] = num[5][8] = r3;
+        num[7][9] = num[8][1] = num[8][5] = r3;
+        num[9][2] = num[9][7] = r3;
+
+        num[1][2] = num[1][4] = num[1][6] = r4;
+        num[2][5] = num[2][5] = num[2][7] = r4;
+        num[3][4] = num[3][7] = num[3][8] = r4;
+        num[4][1] = num[4][3] = num[4][5] = num[4][9] = r4;
+        num[5][2] = num[5][4] = num[5][6] = r4;
+        num[6][1] = num[6][5] = num[6][7] = r4;
+        num[7][2] = num[7][3] = num[7][6] = num[7][8] = r4;
+        num[8][3] = num[8][7] = num[8][9] = r4;
+        num[9][4] = num[9][8] = r4;
+
+        return num[p1][p2];
+
+    }
+
+
+
 
 }
