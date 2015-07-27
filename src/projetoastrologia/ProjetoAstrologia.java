@@ -16,20 +16,25 @@ public class ProjetoAstrologia {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ESOTÉRICO DE HORÓSCOPO E NUMEROLOGIA"
+        System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ESOTÉRICO DE ASTROLOGIA E NUMEROLOGIA"
                 + " DO GRUPO 27 ***~*~**");
 
         String nome = lerNome();
         System.out.println("___________________________________________");
         verNumerologiaNome(nome);
         
+        System.out.println("\n___________________________________________");
         
-        //String signo = lerNascimento();
-
+        System.out.print("*~**~* ASTROLOGIA ~~***~\nPara saber informações de horóscopo, digite 1:\n\n");
+        if(entrada.nextInt()== 1 ){
+                
+            String signo = lerNascimento();
+            String caracteristicas = caracteristicas(signo);
+            System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
+        }
+        
        
-        //String caracteristicas = caracteristicas(signo);
-        //System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
-
+        
         
 
     }
@@ -296,8 +301,6 @@ public class ProjetoAstrologia {
             int[] numeros = new int[letrasN];
             //fazer um vetor com os diferentes números correspondentes a cada letra
 
-            System.out.println("\nO nome, de acordo com o alfabeto hebraico de numerologia:");
-
             for (int i = 0; i < letras.length; i++) {
 
                 String letra = letras[i] + "";
@@ -337,7 +340,7 @@ public class ProjetoAstrologia {
             }
         }
 
-        System.out.println("O número correspondente é " + soma + ".");
+        System.out.println("O número correspondente ao nome é " + soma + ".\n");
         return soma;
 
     }
@@ -350,7 +353,7 @@ public class ProjetoAstrologia {
 
     public static void somaDosCorrespondentes(int[] corr) {
 
-        System.out.println("\n\nSOMA DOS NÚMEROS CORRESPONDENTES\n");
+        System.out.println("NÚMERO CORRESPONDENTE AO NOME INTEIRO");
 
         int soma = 0;
         for (int i = 0; i < corr.length; i++) {
@@ -478,5 +481,9 @@ public class ProjetoAstrologia {
 
         } 
     }
+    
+    
+    
+    
 
 }
