@@ -20,15 +20,17 @@ public class ProjetoAstrologia {
                 + " DO GRUPO 27 ***~*~**");
 
         String nome = lerNome();
+        System.out.println("___________________________________________");
+        verNumerologiaNome(nome);
+        
+        
         //String signo = lerNascimento();
 
-        System.out.println("___________________________________________");
+       
         //String caracteristicas = caracteristicas(signo);
         //System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
 
-        System.out.println("\n");
-
-        verNumerologiaNome(nome);
+        
 
     }
 
@@ -278,6 +280,8 @@ public class ProjetoAstrologia {
 
     public static void verNumerologiaNome(String nome) {
 
+        System.out.println("*~**~** NUMEROLOGIA DO SEU NOME **~*~***");
+        
         //separar os diferentes nomes
         String nomes[] = separarNomes(nome);
         int corr[] = new int[nomes.length];
