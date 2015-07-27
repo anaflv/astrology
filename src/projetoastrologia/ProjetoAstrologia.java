@@ -24,30 +24,45 @@ public class ProjetoAstrologia {
 
         System.out.println("\n___________________________________________");
         System.out.println("\nDigite o nome inteiro em quem você está interessado(a) ou com quem você está num relacionamento:");
-        String nome2 = entrada.next();
-        int numero2 = verNumerologiaNome(nome);
+        String nome2 = entrada.nextLine();
+        int numero2 = verNumerologiaNome(nome2);
 
         System.out.println("\n**** A COMBINAÇÃO DE VOCÊS DE ACORDO COM NUMEROLOGIA ****");
         String combinacaoNum = combinacaoNumerologia(numero1, numero2);
         System.out.println(combinacaoNum);
 
-        /*System.out.print("*~**~* ASTROLOGIA ~~***~\nPara saber informações de horóscopo, digite 1:\n\n");
-         if(entrada.nextInt()== 1 ){
+        System.out.println("\n___________________________________________");
+        System.out.print("*~**~* ASTROLOGIA ~~***~\n");
 
-         String signo = lerNascimento();
-         String caracteristicas = caracteristicas(signo);
-         System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
-         }*/
+        System.out.println("\nSOBRE VOCÊ:");
+        String signo1 = lerNascimento();
+        System.out.println("\n*** Seu signo é: " + signo1 + " ****");
+        String caracteristicas = caracteristicas(signo1);
+        System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
+        int nSigno1 = numeroSigno(signo1);
+        System.out.println("\nSOBRE A OUTRA PESSOA:");
+        String signo2 = lerNascimento();
+        System.out.println("\n*** O signo da pessoa é: " + signo1 + " ****");
+        String caracteristicas2 = caracteristicas(signo1);
+        System.out.println("\nCaractersísticas do signo da pessoa: " + caracteristicas);
+        int nSigno2 = numeroSigno(signo2);
+
+        System.out.println("COMBINAÇÃO DOS SIGNOS:");
+        combinacaoSignos(nSigno1, nSigno2);
+
+        System.out.println("\n**~* AGRADECEMOS POR USAR O PROGRAMA DE ESOTÉRICO DE ASTROLOGIA E NUMEROLOGIA"
+                + " DO GRUPO 27 ***~*~**");
+
     }
 
     public static String lerNascimento() {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("\nDigite o dia de seu nascimento (por exemplo, '12'):");
+        System.out.println("Digite o dia de nascimento (por exemplo, '12'):");
         int dia = entrada.nextInt();
 
-        System.out.println("\nDigite o mês de seu nascimento (por exemplo, '03'):");
+        System.out.println("\nDigite o mês de nascimento (por exemplo, '03'):");
         int mes = entrada.nextInt();
 
         String signo = verSigno(dia, mes);
@@ -270,7 +285,7 @@ public class ProjetoAstrologia {
 
     public static int verNumerologiaNome(String nome) {
 
-        System.out.println("*~**~** NUMEROLOGIA DO SEU NOME **~*~***");
+        System.out.println("*~**~** NUMEROLOGIA DO NOME **~*~***");
 
         //separar os diferentes nomes
         String nomes[] = separarNomes(nome);
@@ -487,7 +502,7 @@ public class ProjetoAstrologia {
         num[5][1] = num[5][5] = num[5][7] = r1;
         num[6][3] = num[6][6] = num[6][9] = r1;
         num[7][1] = num[7][5] = num[7][7] = r1;
-        num[8][4] = num[8][4] = num[8][8] = r1;
+        num[8][2] = num[8][4] = num[8][8] = r1;
         num[9][3] = num[9][6] = num[9][9] = r1;
 
         num[1][3] = num[1][9] = r2;
@@ -505,7 +520,7 @@ public class ProjetoAstrologia {
         num[9][2] = num[9][7] = r3;
 
         num[1][2] = num[1][4] = num[1][6] = r4;
-        num[2][5] = num[2][5] = num[2][7] = r4;
+        num[2][1] = num[2][6] = num[2][5] = num[2][7] = r4;
         num[3][4] = num[3][7] = num[3][8] = r4;
         num[4][1] = num[4][3] = num[4][5] = num[4][9] = r4;
         num[5][2] = num[5][4] = num[5][6] = r4;
@@ -518,9 +533,9 @@ public class ProjetoAstrologia {
 
     }
 
-    public static boolean combinacaoSignos(int p1, int p2) {
+    public static void combinacaoSignos(int p1, int p2) {
 
-        boolean A[][] = new boolean[12][12];
+        boolean A[][] = new boolean[13][13];
 
         int ind, indb;
         for (ind = 0; ind < 12; ind++) {
@@ -570,7 +585,46 @@ public class ProjetoAstrologia {
         A[11][1] = true;
         A[1][11] = true;
 
-        return A[p1][p2];
+        boolean comb = A[p1][p2];
+        if (comb == true) {
+            System.out.println("\nO signo de vocês é uma combinação ótima! Parabéns.");
+        } else {
+            System.out.println("\nInfelizmente, a combinação do signo de vocês não"
+                    + " é ideal. Mas não desista por causa disso!");
+        }
+
+    }
+
+    public static int numeroSigno(String signo) {
+
+        int n = 0;
+        if (signo.equals("Aries")) {
+            n = 12;
+        } else if (signo.equals(("Touro"))) {
+            n = 1;
+        } else if (signo.equals(("Gêmeos"))) {
+            n = 2;
+        } else if (signo.equals(("Câncer"))) {
+            n = 3;
+        } else if (signo.equals(("Leão"))) {
+            n = 4;
+        } else if (signo.equals(("Virgem"))) {
+            n = 5;
+        } else if (signo.equals(("Libra"))) {
+            n = 6;
+        } else if (signo.equals(("Escorpião"))) {
+            n = 7;
+        } else if (signo.equals(("Sagitário"))) {
+            n = 8;
+        } else if (signo.equals(("Capricórnio"))) {
+            n = 9;
+        } else if (signo.equals(("Aquário"))) {
+            n = 10;
+        } else if (signo.equals(("Peixes"))) {
+            n = 11;
+        }
+
+        return n;
 
     }
 
