@@ -11,40 +11,34 @@ public class ProjetoAstrologia {
     /**
      * Projeto de astrologia, desenvolvido para PI-EAD 2015 UFABC
      */
-
-
     public static void main(String[] args) {
-
-
 
         Scanner entrada = new Scanner(System.in);
         System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ESOTÉRICO DE ASTROLOGIA E NUMEROLOGIA"
                 + " DO GRUPO 27 ***~*~**");
 
-        String nome;
-        System.out.println("\nDigite seu nome inteiro, sem acentos, por favor:");
-        nome = entrada.nextLine();
-        
-        
-        
         System.out.println("___________________________________________");
-        verNumerologiaNome(nome);
+        System.out.println("\nDigite seu nome inteiro, sem acentos, por favor:");
+        String nome = entrada.nextLine();
+        int numero1 = verNumerologiaNome(nome);
 
         System.out.println("\n___________________________________________");
+        System.out.println("\nDigite o nome inteiro em quem você está interessado(a) ou com quem você está num relacionamento:");
+        String nome2 = entrada.next();
+        int numero2 = verNumerologiaNome(nome);
 
-        System.out.print("*~**~* ASTROLOGIA ~~***~\nPara saber informações de horóscopo, digite 1:\n\n");
-        if(entrada.nextInt()== 1 ){
+        System.out.println("\n**** A COMBINAÇÃO DE VOCÊS DE ACORDO COM NUMEROLOGIA ****");
+        String combinacaoNum = combinacaoNumerologia(numero1, numero2);
+        System.out.println(combinacaoNum);
 
-            String signo = lerNascimento();
-            String caracteristicas = caracteristicas(signo);
-            System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
-        }
+        /*System.out.print("*~**~* ASTROLOGIA ~~***~\nPara saber informações de horóscopo, digite 1:\n\n");
+         if(entrada.nextInt()== 1 ){
 
-
-
-
+         String signo = lerNascimento();
+         String caracteristicas = caracteristicas(signo);
+         System.out.println("\nCaractersísticas do seu signo: " + caracteristicas);
+         }*/
     }
-
 
     public static String lerNascimento() {
 
@@ -274,7 +268,7 @@ public class ProjetoAstrologia {
         return letras;
     }
 
-    public static void verNumerologiaNome(String nome) {
+    public static int verNumerologiaNome(String nome) {
 
         System.out.println("*~**~** NUMEROLOGIA DO SEU NOME **~*~***");
 
@@ -304,7 +298,8 @@ public class ProjetoAstrologia {
             corr[j] = somaNumeros(numeros);
         }
 
-        somaDosCorrespondentes(corr);
+        int soma = somaDosCorrespondentes(corr);
+        return soma;
 
     }
 
@@ -342,7 +337,7 @@ public class ProjetoAstrologia {
         return nomes;
     }
 
-    public static void somaDosCorrespondentes(int[] corr) {
+    public static int somaDosCorrespondentes(int[] corr) {
 
         System.out.println("NÚMERO CORRESPONDENTE AO NOME INTEIRO");
 
@@ -367,9 +362,9 @@ public class ProjetoAstrologia {
             System.out.println(digito1 + " + " + digito2 + " = " + soma);
         }
 
-        System.out.println("\n*** O número correspondente ao seu nome inteiro é: " + soma + " ***\n");
+        System.out.println("\n*** O número correspondente ao nome inteiro é: " + soma + " ***\n");
         verSignificadoNumero(soma);
-
+        return soma;
 
     }
 
@@ -471,26 +466,24 @@ public class ProjetoAstrologia {
                     + "Pessoas manipulativas podem chocar pessoas 9.");
 
         }
+
     }
 
+    public static String combinacaoNumerologia(int p1, int p2) {
 
-    public static String combinacaoNumerologia(int p1, int p2){
+        String num[][] = new String[10][10];
 
-        String num[][] = new String[9][9];
-
-        String r1 = "De acordo com numerologia, vocês têm uma combinação ótima!"+
-                "Vocês se encaixam naturalmente";
+        String r1 = "De acordo com numerologia, vocês têm uma combinação perfeita!"
+                + " Vocês se encaixam naturalmente.";
         String r2 = "De acordo com numerologia, seus números normalmente são compatíveis e vocês se dão bem!";
         String r3 = "De acordo com numerologia, pode ser que vocês se deem bem e pode ser que não. Tudo depende de suas ações!";
         String r4 = "De acordo com numerologia, a combinação de seus números é um desafio e requer esforço e compromisso.";
 
         //A combinação entre os valores de todos os números e o significado deles
-
-
         num[1][1] = num[1][5] = num[1][7] = r1;
         num[2][2] = num[2][4] = num[2][8] = r1;
         num[3][3] = num[3][6] = num[3][9] = r1;
-        num[4][2] = num[4][2] = num[4][8] = r1;
+        num[4][2] = num[4][4] = num[4][8] = r1;
         num[5][1] = num[5][5] = num[5][7] = r1;
         num[6][3] = num[6][6] = num[6][9] = r1;
         num[7][1] = num[7][5] = num[7][7] = r1;
@@ -525,7 +518,60 @@ public class ProjetoAstrologia {
 
     }
 
+    public static boolean combinacaoSignos(int p1, int p2) {
 
+        boolean A[][] = new boolean[12][12];
 
+        int ind, indb;
+        for (ind = 0; ind < 12; ind++) {
+            for (indb = 0; indb < 12; indb++) {
+                A[ind][indb] = false;
+            }
+        }
+
+        A[12][6] = true;
+        A[6][12] = true;
+        A[1][9] = true;
+        A[9][1] = true;
+        A[12][8] = true;
+        A[8][12] = true;
+        A[1][7] = true;
+        A[7][1] = true;
+        A[2][10] = true;
+        A[10][2] = true;
+        A[2][8] = true;
+        A[8][2] = true;
+        A[3][11] = true;
+        A[11][3] = true;
+        A[3][9] = true;
+        A[9][3] = true;
+        A[4][8] = true;
+        A[8][4] = true;
+        A[4][10] = true;
+        A[10][4] = true;
+        A[5][1] = true;
+        A[1][5] = true;
+        A[5][11] = true;
+        A[11][5] = true;
+        A[6][2] = true;
+        A[2][6] = true;
+        A[6][10] = true;
+        A[10][6] = true;
+        A[7][3] = true;
+        A[3][7] = true;
+        A[7][11] = true;
+        A[11][7] = true;
+        A[8][10] = true;
+        A[10][8] = true;
+        A[9][5] = true;
+        A[5][9] = true;
+        A[10][12] = true;
+        A[12][10] = true;
+        A[11][1] = true;
+        A[1][11] = true;
+
+        return A[p1][p2];
+
+    }
 
 }
