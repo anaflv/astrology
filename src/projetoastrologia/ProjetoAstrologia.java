@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author anaflavia 2014
+ * @author anaflavia 2015
  */
 public class ProjetoAstrologia {
 
@@ -42,8 +42,8 @@ public class ProjetoAstrologia {
         int nSigno1 = numeroSigno(signo1);
         System.out.println("\nSOBRE A OUTRA PESSOA:");
         String signo2 = lerNascimento();
-        System.out.println("\n*** O signo da pessoa é: " + signo1 + " ****");
-        String caracteristicas2 = caracteristicas(signo1);
+        System.out.println("\n*** O signo da pessoa é: " + signo2 + " ****");
+        String caracteristicas2 = caracteristicas(signo2);
         System.out.println("\nCaractersísticas do signo da pessoa: " + caracteristicas);
         int nSigno2 = numeroSigno(signo2);
 
@@ -74,29 +74,29 @@ public class ProjetoAstrologia {
     public static String verSigno(int dia, int mes) {
 
         String signo = "";
-        if (mes == 1 && dia <= 19 || mes == 12 && dia <= 31) {
+        if (mes == 1 && dia > 19 || mes == 2 && dia <= 18) {
             signo = "Aquário";
-        } else if (mes == 1 && dia > 19 || mes == 2 && dia <= 18) {
-            signo = "Peixes";
         } else if (mes == 2 && dia >= 19 || mes == 3 && dia <= 20) {
-            signo = "Aries";
+            signo = "Peixes";
         } else if (mes == 3 && dia >= 21 || mes == 4 && dia <= 19) {
-            signo = "Touro";
+            signo = "Aries";
         } else if (mes == 4 && dia >= 20 || mes == 5 && dia <= 20) {
-            signo = "Gêmeos";
+            signo = "Touro";
         } else if (mes == 5 && dia >= 21 || mes == 6 && dia <= 20) {
-            signo = "Câncer";
+            signo = "Gêmeos";
         } else if (mes == 6 && dia >= 21 || mes == 7 && dia <= 22) {
-            signo = "Leão";
+            signo = "Câncer";
         } else if (mes == 7 && dia >= 23 || mes == 8 && dia <= 22) {
-            signo = "Virgem";
+            signo = "Leão";
         } else if (mes == 8 && dia >= 23 || mes == 9 && dia <= 22) {
-            signo = "Libra";
+            signo = "Virgem";
         } else if (mes == 9 && dia >= 23 || mes == 10 && dia <= 22) {
-            signo = "Escorpião";
+            signo = "Libra";
         } else if (mes == 10 && dia >= 23 || mes == 11 && dia <= 21) {
-            signo = "Sagitário";
+            signo = "Escorpião";
         } else if (mes == 11 && dia >= 22 || mes == 12 && dia <= 21) {
+            signo = "Sagitário";
+        } else if (mes == 12 && dia >= 22 || mes == 1 && dia <= 19) {
             signo = "Capricórnio";
         }
 
