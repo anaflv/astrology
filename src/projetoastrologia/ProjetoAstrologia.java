@@ -5,6 +5,11 @@ import java.util.Scanner;
 /**
  *
  * @author anaflavia 2015
+ * 
+ * Dia 29/07 é meu aniversário
+ * eu to escrevendo isso literalmente durante a minha festa de anivesário
+ * eu me esforcei muito pra fazer esse programa
+ * seja gentil por favor
  */
 public class ProjetoAstrologia {
 
@@ -44,7 +49,7 @@ public class ProjetoAstrologia {
         String signo2 = lerNascimento();
         System.out.println("\n*** O signo da pessoa é: " + signo2 + " ****");
         String caracteristicas2 = caracteristicas(signo2);
-        System.out.println("\nCaractersísticas do signo da pessoa: " + caracteristicas);
+        System.out.println("\nCaracterísticas do signo da pessoa: " + caracteristicas);
         int nSigno2 = numeroSigno(signo2);
 
         System.out.println("COMBINAÇÃO DOS SIGNOS:");
@@ -390,37 +395,37 @@ public class ProjetoAstrologia {
                     + "Pessoas de número 1 possuem um senso forte de auto-valor, e normalmente "
                     + "não gostam de críticas. Uma pessoa 1 demanda - e normalmente consegue - "
                     + "respeito; vão insistir em organizar e controlar todos e todas a sua volta.\n"
-                    + "Possuem o desejo de ser inventivos, creativos e fortemente originais.");
+                    + "Possuem o desejo de serem inventivos, criativos e fortemente originais.");
 
         } else if (num == 2) {
 
-            System.out.println("O número 2 representa imaginação, paternidade e sensibilidade.\n"
-                    + "2 é o número da decepção, do nascimento e de sonhos.\n"
+            System.out.println("O número 2 representa imaginação, sensibilidade e a capacidade de serem bons pais ou mães.\n"
+                    + "2 também é o número da decepção, do nascimento e de sonhos.\n"
                     + "Pessoas 2 são sonhadoras, com uma tendência de ter medo do"
                     + " desconhecido ou do pouco familiar.\n"
-                    + "São muito imaginativos e inventivos, mas não forçam as ourtas pessoas a concordar "
+                    + "São muito imaginativas e inventivas, mas não forçam as outras pessoas a concordarem "
                     + "com suas ideias ou seus planos.");
 
         } else if (num == 3) {
 
             System.out.println("Número 3 representa idealismo, educação superior, viagens a "
-                    + "outros países e religião.\n3 é o número de otimismo, movimento e expansão "
-                    + "- e a Santíssima Trindidade de corpo, alma e espírito.\nPessoas 3 baseam todas"
-                    + " suas ações em algum grande ideal que possuem.\nEles miram para o alto e para a"
-                    + " verdade -- não são satisfeitos com nada além da verdade, seja em um relacionam"
-                    + "ento, em uma amizade, na carreira, na política ou na religão. \n"
-                    + "Eles não são abrem mão do que querem, e conseguem perceber mentiras de "
+                    + "outros países e religião.\n3 é o número de otimismo, do movimento e expansão "
+                    + "- e a Santíssima Trindade de corpo, alma e espírito.\nPessoas 3 baseiam todas"
+                    + "as suas ações em algum grande ideal que possuem.\nElas miram para o alto e para a"
+                    + " verdade -- não ficam satisfeitos com nada além da verdade, seja em um relacionamento,\n"
+                    + "em uma amizade, na carreira, na política ou na religão. \n"
+                    + "Eles não são abrem mão do que querem, e conseguem perceber mentiras de\n"
                     + "longe. Alguns deles alcançam seu objetivo da verdade, e outros são levados"
                     + " a acreditar em suas próprias ilusões, mas eles nunca param sua busca.");
 
         } else if (num == 4) {
 
             System.out.println("O número 4 vibra para o planeta Urano."
-                    + "\nRepresenta individualismo, originalidade, inventividade e tolerância.\n"
-                    + "4 é o número do compartamento não convencional e de eventos inesperados "
-                    + "e repentinos.\n"
+                    + "\nRepresenta o individualismo, a originalidade, a inventividade e tolerância.\n"
+                    + "4 é o número do compartamento não-convencional e de eventos inesperados"
+                    + " e repentinos.\n"
                     + "Pessoas do número 4 são raramente compreendidos por seus amigos e familiares."
-                    + "\nSão um enigma para todos que conhecem. Fazem suas próprias regras, e elas nem sempre combinam com aquelas da sociedade.\n"
+                    + "\nSão um enigma para todos que conhecem.\nFazem suas próprias regras, e elas nem sempre combinam com as regas da sociedade.\n"
                     + "Todos seus pensamentos e ações são coloridas por invididualidade.\n"
                     + "Se tem um jeito diferente de fazer alguma coisa, a pessoa número 4 vai descobri-lo.\n"
                     + "Suas palavras frequentemente chocam as outras, e pode parecer que elas fazem isso de propósito. E fazem.");
@@ -430,12 +435,12 @@ public class ProjetoAstrologia {
             System.out.println("O número 5 vibra para o planeta Mercúrio.\n"
                     + "Representa comunicação, movimento e versatilidade.\n"
                     + "5 é o número do intelecto e da expressão oral e escrita.\n"
-                    + "Pessoas número 5 possuem um charme natural são gentis.\n"
+                    + "Pessoas número 5 possuem um charme natural e são gentis.\n"
                     + "São rápidos para perceber coisas erradas, e não hesitam em apontá-los.\n"
-                    + "São incapazes de ignorar erros (seus próprios e das outras pessoas), e isso é associado a um amor por movimento e viagem.\n"
+                    + "São incapazes de ignorar erros (seus próprios e das outras pessoas) e isso é associado a um amor por movimento e viagem.\n"
                     + "Mudanças são uma necessidade interminável para pessoas 5.\n"
                     + "Mudanças de cenário, de relacionamentos, de residência, de crenças políticas, etc.\n"
-                    + "Pessoas 5 têm dificuldade de agor de forma intuitiva; são determinados a encontrar respostas lógicas.");
+                    + "Pessoas 5 têm dificuldade de agir de forma intuitiva; são determinados a encontrar respostas lógicas.");
 
         } else if (num == 6) {
 
@@ -451,13 +456,13 @@ public class ProjetoAstrologia {
 
             System.out.println("O número 7 vibra para o planeta Netuno.\n"
                     + "Representa espiritualidade, simpatia e mistério.\n"
-                    + "7 é o número da elusão e da delusão - e às vezes da mentira - mas também o número da cura, dos milagres e da fé, e de sonhos que se realizam.\n"
+                    + "7 é o número da elusão e da delusão - e às vezes da mentira -\nmas também o número da cura, dos milagres e da fé, e de sonhos que se realizam.\n"
                     + "Pessoas 7 tendem a ter sonhos impressionantes.\n"
                     + "Às vezes falam sobre eles, e às vezes não comentam sobre eles com ninguém.\n"
                     + "Mas eles são os mais sonhadores. \n"
                     + "Em segredo, são interessados em mistérios esotéricos, em extraterrestres, e no desconhecido.\n"
                     + "Às vezes possuem o dom da intuição e de um magnetismo que acalma os outros.\n"
-                    + "Muitas vezes, conseguem acalmar as pessoas apenas a presença deles.");
+                    + "Muitas vezes, conseguem acalmar as pessoas apenas com a presença deles.");
 
         } else if (num == 8) {
 
@@ -465,17 +470,17 @@ public class ProjetoAstrologia {
                     + "Representa conhecimento, aprendizado através da experiência, estabilidade, paciência e responsabilidade.\n"
                     + "8 é também o número da estabilidade financeira, da precaução, da restrição, da auto-disciplina e do auto-controle.\n"
                     + "Pessoas 8 são normalmente reservadas, quietas e tímidas. \n"
-                    + "Não necessariamente se destacam, mas devagar chegam onde querem, e nada vai impedi-las a alcançar suas ambições.\n"
-                    + "A timidez é uma forma de encobrir a energia que possuem para chegar ao todo de suas profissões ou carreiras.");
+                    + "Não necessariamente se destacam, mas devagar chegam onde querem, e nada vai impedi-las de alcançar suas ambições.\n"
+                    + "A timidez é uma forma de encobrir a energia que possuem para chegar ao topo de suas profissões ou carreiras.");
 
         } else if (num == 9) {
 
             System.out.println("O número 9 vibra para o planeta Marte.\n"
                     + "Representa ação agressiva, coragem e conflito.\n"
-                    + "9 é o número da originalidade e da intuição, e da iniciativa ....\n"
+                    + "9 é o número da originalidade, da intuição e da iniciativa ....\n"
                     + "também dos aspectos contraditórios da vulnerabilidade e da ingenuidade.\n"
                     + "Pessoas 9 não são teimosas, mas são determinadas a obter o que querem.\n"
-                    + "Têm uma tendência a serem impulsivas e a fazerem decisões precipitadas, que depois arrependem.\n"
+                    + "Têm uma tendência a serem impulsivas e a fazerem decisões precipitadas, das quais depois se arrependem.\n"
                     + "Apesar de às vezes ficarem irritados com as pessoas, são rápidos a perdoar e a esquecer de brigas.\n"
                     + "São vulneráveis a seus inimigos porque o primeiro instinto deles é confiar em todos.\n"
                     + "Pessoas manipulativas podem chocar pessoas 9.");
