@@ -19,7 +19,7 @@ public class ProjetoAstrologia {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA DE ESOTÉRICO DE ASTROLOGIA E NUMEROLOGIA"
+        System.out.println("**~* SEJA BEM-VINDO AO PROGRAMA ESOTÉRICO DE ASTROLOGIA E NUMEROLOGIA"
                 + " DO GRUPO 27 ***~*~**");
 
         System.out.println("___________________________________________");
